@@ -67,7 +67,7 @@ void writetwoD(deque<Student>S, int k);
 void writedeleteD(deque<Student>S, int k);
 
 void create (int k, char type);
-bool sorting (const student& a, const student& b);
+
 
 
 
