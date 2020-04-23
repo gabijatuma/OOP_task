@@ -313,24 +313,10 @@ catch(...)
 
 
 
-
-
-
-
-
-
-
-bool sorting (const student& a, const student& b)
-{
-    return a.vid > b.vid;
-}
-
 bool sortings (const Student& a, const Student& b)
 {
     return a.getVid() > b.getVid();
 }
-
-
 
 
 void writefile(vector<Student>S, char type, int k)
