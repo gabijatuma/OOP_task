@@ -1,5 +1,5 @@
 # OOP_task
-The most optimal container was list. So i compared two lists when whey are using stuctures and classes.
+The most optimal container was list. So i compared two lists when whey are using stuctures and classes. The fastest method is when i create 2 new lists and put the right students into each. the numbers show that it was faster to work with structures than with classes. That is probably because i have to get access to the private members of the class to compare them in any way.
 
 **List with struct:
 
