@@ -44,6 +44,22 @@ public:
     {
         return surname;
     }
+
+    //RULE OF THREE (for now doesnt have a difference, so neither of them is necessary)
+    /*Student( const Student &obj)// copy constructor
+    {
+       cout<<"Copy constructor called "<<endl;
+    }
+
+     Student& operator = (const Student &t)
+    {
+        cout<<"Assignment operator called "<<endl;
+        return *this;
+    }
+    ~Student()
+    {
+         cout<<"Object deleted "<<endl;
+    }*/
 };
 
 
@@ -67,13 +83,5 @@ void writetwoD(deque<Student>S, int k);
 void writedeleteD(deque<Student>S, int k);
 
 void create (int k, char type);
-
-
-
-
-
-
-
-
 
 #endif // TASKS_H_INCLUDED
