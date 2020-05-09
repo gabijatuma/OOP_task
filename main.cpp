@@ -21,24 +21,20 @@ int main()
 
     int what;
     char type = 'v';
-    cout<<"pasirinkite konteineri."<<endl<<"1 - list, 2 - vector, 3 - deque."<<endl;
 
-    cin>>what;
-    if(what!=1 && what!=2 && what!=3)
+
+cout<<"Issirstymas i failus | irasymas i naujus konteinerius | irasymas i nauja ir senu duomenu panaikinimas "<<endl;
+ for(int kiekis = 1000; kiekis <= 10000000; kiekis*=10)
     {
-        cout<<"ivedete neteisinga pasirinkima. bus pasirinktas list konteineris"<<endl;
-        what = 1;
-    }
-
-
-    for(int kiekis = 1000; kiekis <= 10000000; kiekis*=10)
-    {
-    create(kiekis, type);
-    if(what == 1) readfilesL(type, kiekis);
-    if(what == 2) readfileV(type, kiekis);
-    if(what == 3) readfileD(type, kiekis);
+     cout<<kiekis<<endl;
+     create(kiekis, type);
+     cout<<"list     ";
+     readfilesL(type, kiekis);
+     cout<<"vector   ";
+     readfileV(type, kiekis);
+     cout<<"deque    ";
+     readfileD(type, kiekis);
 
     }
-
     return 0;
 }
