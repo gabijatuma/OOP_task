@@ -17,25 +17,12 @@
 using namespace std;
 using namespace std::chrono;
 
-class Student{
-private:
+class Human{
+protected:
     string name, surname;
-    double vid;
 public:
-    Student(): vid(0){}
-    void setName(string nam, string sur) //setter
-    {
-        name = nam;
-        surname = sur;
-    }
-    void setVid(double V) //setter
-    {
-        vid = V;
-    }
-    double getVid() const
-    {
-        return vid;
-    }
+    virtual void setName(string nam, string sur) = 0; //setter
+
     string getName()
     {
         return name;
@@ -44,22 +31,30 @@ public:
     {
         return surname;
     }
+};
 
-    //RULE OF THREE (for now doesnt have a difference, so neither of them is necessary)
-    /*Student( const Student &obj)// copy constructor
+
+class Student : public Human{
+private:
+    double vid;
+public:
+    Student(): vid(0){}
+    void setVid(double V) //setter
     {
-       cout<<"Copy constructor called "<<endl;
+        vid = V;
+    }
+    double getVid() const
+    {
+        return vid;
     }
 
-     Student& operator = (const Student &t)
+    void setName(string nam, string sur) //setter
     {
-        cout<<"Assignment operator called "<<endl;
-        return *this;
+        name = nam;
+        surname = sur;
     }
-    ~Student()
-    {
-         cout<<"Object deleted "<<endl;
-    }*/
+
+
 };
 
 
@@ -83,5 +78,13 @@ void writetwoD(deque<Student>S, int k);
 void writedeleteD(deque<Student>S, int k);
 
 void create (int k, char type);
+
+
+
+
+
+
+
+
 
 #endif // TASKS_H_INCLUDED
