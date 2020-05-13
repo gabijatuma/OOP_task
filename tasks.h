@@ -36,6 +36,7 @@ public:
 
 class Student : public Human{
 private:
+    //string name, surname;
     double vid;
 public:
     Student(): vid(0){}
@@ -52,6 +53,24 @@ public:
     {
         name = nam;
         surname = sur;
+    }
+
+    ~Student() {}; //destructor
+     Student(const Student &p2) //copy constructor
+     {
+        this -> name = p2.name;
+        this -> surname = p2.surname;
+        this -> vid = p2.vid;
+
+     }
+     Student& operator = (const Student& p2)
+     {
+        if(&p2 == this) return *this;
+
+        name = p2.name;
+        surname = p2.surname;
+        vid = p2.vid;
+        return *this;
     }
 
 
