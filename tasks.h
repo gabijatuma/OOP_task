@@ -13,6 +13,8 @@
 #include <list>
 #include <deque>
 #include <algorithm>
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
 using namespace std;
 using namespace std::chrono;
@@ -56,15 +58,15 @@ public:
     }
 
     ~Student() {}; //destructor
-     Student(const Student &p2) //copy constructor
-     {
+    Student(const Student &p2) //copy constructor
+    {
         this -> name = p2.name;
         this -> surname = p2.surname;
         this -> vid = p2.vid;
 
-     }
-     Student& operator = (const Student& p2)
-     {
+    }
+    Student& operator = (const Student& p2)
+    {
         if(&p2 == this) return *this;
 
         name = p2.name;
@@ -97,13 +99,6 @@ void writetwoD(deque<Student>S, int k);
 void writedeleteD(deque<Student>S, int k);
 
 void create (int k, char type);
-
-
-
-
-
-
-
 
 
 #endif // TASKS_H_INCLUDED
