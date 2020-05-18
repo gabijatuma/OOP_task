@@ -10,31 +10,51 @@
 #include <deque>
 #include <algorithm>
 #include "tasks.h"
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
 using namespace std;
 
+TEST(Student_comparison, Test1) {
 
-int main()
-{
+    Student s1, s2;
+    s1.setName("Tom", "Quinn");
+    s1.setVid(1.5);
+    s2.setName("Elon", "Musk");
+    s2.setVid(10);
 
-    srand (time(NULL));
+    ASSERT_TRUE(sortings(s2, s1)==1);
+}
 
-    int what;
+TEST(Student_copy, Test2) {
+
+    Student s1, s2;
+    s1.setName("Tom", "Quinn");
+    s1.setVid(1.5);
+    s2 = s1;
+
+    ASSERT_TRUE(s2.getVid()==s1.getVid());
+}
+
+int main() {
+
+    testing::InitGoogleTest();
+
     char type = 'v';
 
-
-cout<<"Issirstymas i failus | irasymas i naujus konteinerius | irasymas i nauja ir senu duomenu panaikinimas "<<endl;
- for(int kiekis = 1000; kiekis <= 10000000; kiekis*=10)
-    {
-     cout<<kiekis<<endl;
-     create(kiekis, type);
-     cout<<"list     ";
-     readfilesL(type, kiekis);
-     cout<<"vector   ";
-     readfileV(type, kiekis);
-     cout<<"deque    ";
-     readfileD(type, kiekis);
+    cout << "Issirstymas i failus | irasymas i naujus konteinerius | irasymas i nauja ir senu duomenu panaikinimas "
+         << endl;
+    for (int kiekis = 1000; kiekis <= 10000000; kiekis *= 10) {
+        cout << kiekis << endl;
+        create(kiekis, type);
+        cout << "list     ";
+        readfilesL(type, kiekis);
+        cout << "vector   ";
+        readfileV(type, kiekis);
+        cout << "deque    ";
+        readfileD(type, kiekis);
 
     }
-    return 0;
+    return RUN_ALL_TESTS();
 }
+
